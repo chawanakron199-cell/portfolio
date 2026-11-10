@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ข้อมูลนักศึกษา 2 คน ทักษะ ประวัติการศึกษา และสถานที่เรียน">
+    <title>Portfolio | ประวัตินักศึกษา</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f0f4f8;
+            color: #263238;
+            line-height: 1.8;
+        }
+        header {
+            background: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 25px 16px;
+        }
+        header h1 { margin: 0; }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+        }
+        nav a { color: white; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+        main {
+            width: min(100% - 30px, 1000px);
+            margin: 25px auto;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000015;
+            min-width: 0;
+        }
+        h2 { color: #1565c0; }
+        .students, .school-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+        .student, .school-card {
+            min-width: 0;
+            background: #f8fbff;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        figure { text-align: center; margin: 15px 0; }
+        figure img {
+            display: block;
+            width: 200px;
+            max-width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: auto;
+        }
+        .school-card { text-align: center; }
+        .school-card a { color: #263238; text-decoration: none; }
+        .school-card a:hover { color: #1565c0; }
+        .school-img {
+            display: block;
+            width: 100%;
+            max-width: 420px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 0 auto;
+        }
+        .back-link {
+            display: inline-block;
+            background: #263238;
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+        .back-link:hover { background: #455a64; }
+        footer {
+            background: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        @media (max-width: 650px) {
+            .students, .school-grid { grid-template-columns: 1fr; }
+            header { padding: 22px 14px; }
+            header h1 { font-size: 1.5rem; }
+            main { width: min(100% - 20px, 1000px); margin: 15px auto; }
+            section { padding: 16px; }
+            .school-img { height: 190px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Portfolio นักศึกษา</h1>
+        <p>ประวัติ ทักษะ การศึกษา และสถานที่เรียน</p>
+        <nav aria-label="เมนูหลัก">
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>ประวัตินักศึกษา</h2>
+            <div class="students">
+                <div class="student">
+                    <figure>
+                        <img src="images/me.jpg" alt="รูปนักศึกษาคนที่ 1" width="200" height="240">
+                        <figcaption>นักศึกษาคนที่ 1</figcaption>
+                    </figure>
+                    <h3>คนที่ 1</h3>
+                    <p><strong>ชื่อ:</strong> ชวนากร ไชยมี</p>
+                    <p><strong>ชื่อเล่น:</strong> พีช</p>
+                    <p><strong>ทักษะของนักศึกษา:</strong> เล่นเกม</p>
+                </div>
+                <div class="student">
+                    <figure>
+                        <img src="images/project1.png" alt="รูปนักศึกษาคนที่ 2" width="200" height="240">
+                        <figcaption>นักศึกษาคนที่ 2</figcaption>
+                    </figure>
+                    <h3>คนที่ 2</h3>
+                    <p><strong>ชื่อ:</strong> วุฒิพงศ์ โพธิ์เกษม</p>
+                    <p><strong>ชื่อเล่น:</strong> ฟลุ๊ค</p>
+                    <p><strong>ทักษะของนักศึกษา:</strong> การเล่นกีฬา</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>ทักษะของนักศึกษา</h2>
+            <ul>
+                <li>การใช้งานคอมพิวเตอร์</li>
+                <li>การเล่นกีฬา</li>
+                <li>การเล่นเกม</li>
+                <li>การทำงานร่วมกันเป็นทีม</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>ประวัติการศึกษา</h2>
+            <ol>
+                <li>ระดับมัธยมศึกษา ม.6 — โรงเรียนเดิม พระบางวิทยา</li>
+                <li>ระดับปัจจุบัน ปวส.1 — สถานศึกษาปัจจุบัน เทคนิคนครสวรรค์</li>
+            </ol>
+        </section>
+
+        <section class="school">
+            <h2>สถานศึกษาของเรา</h2>
+            <p>คลิกที่รูปเพื่อเข้าสู่เว็บไซต์ของโรงเรียน</p>
+            <div class="school-grid">
+                <div class="school-card">
+                    <a href="https://www.phrabang.ac.th/" target="_blank" rel="noopener noreferrer">
+                        <img class="school-img" src="images/school.jpg" alt="โรงเรียนพระบางวิทยา">
+                        <h3>โรงเรียนเดิม: พระบางวิทยา</h3>
+                        <p>คลิกเพื่อดูเว็บไซต์โรงเรียน</p>
+                    </a>
+                </div>
+                <div class="school-card">
+                    <a href="https://www.nkstec.ac.th/=วิทยาลัยเทคนิคนครสวรรค์" target="_blank" rel="noopener noreferrer">
+                        <img class="school-img" src="images/school-current.png" alt="วิทยาลัยเทคนิคนครสวรรค์">
+                        <h3>สถานศึกษาปัจจุบัน: เทคนิคนครสวรรค์</h3>
+                        <p>คลิกเพื่อค้นหาข้อมูลสถานศึกษา</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>กลับไปหน้าหลัก</h2>
+            <p>ดูหน้าแนะนำตัวของสมาชิกทั้ง 2 คนได้ที่หน้าแรก</p>
+            <a class="back-link" href="index.html">กลับหน้าแรก</a>
+        </section>
+    </main>
+
+    <footer><p>จัดทำโดยนักศึกษา 2 คน เพื่อประกอบการเรียน</p></footer>
+</body>
+</html>
