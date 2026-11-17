@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แนะนำประวัติส่วนตัว ทักษะ และประวัติการศึกษาของนักศึกษา 2 คน">
+    <title>ประวัติส่วนตัว | นักศึกษา 2 คน</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            color: #263238;
+            margin: 0;
+            line-height: 1.8;
+        }
+        header {
+            background: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 25px 16px;
+        }
+        header h1 { margin: 0; }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 12px 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 25px;
+        }
+        nav a { color: white; text-decoration: none; }
+        nav a:hover { text-decoration: underline; }
+
+        main {
+            width: min(100% - 30px, 1000px);
+            margin: 25px auto;
+        }
+        .students {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+        section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #00000015;
+            min-width: 0;
+        }
+        h2 { color: #1565c0; }
+        figure { text-align: center; margin: 15px 0; }
+        figure a { display: inline-block; text-decoration: none; color: inherit; }
+        figure img {
+            display: block;
+            width: 200px;
+            max-width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: auto;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+        figure a:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 6px 16px rgba(21, 101, 192, 0.25);
+        }
+        .back-link {
+            display: inline-block;
+            background: #1565c0;
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            margin-right: 8px;
+        }
+        .back-link:hover { background: #0d47a1; }
+        footer {
+            background: #1565c0;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        @media (max-width: 650px) {
+            .students { grid-template-columns: 1fr; }
+            header { padding: 22px 14px; }
+            header h1 { font-size: 1.5rem; }
+            main { width: min(100% - 20px, 1000px); margin: 15px auto; }
+            section { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ประวัติส่วนตัวของนักศึกษา 2 คน</h1>
+        <nav aria-label="เมนูหลัก">
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="portfolio.html">ผลงาน</a></li>
+                <li><a href="signup.html">สมัครสมาชิก</a></li>
+                <li><a href="login.html">เข้าสู่ระบบ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="students">
+            <section class="student">
+                <h2>เกี่ยวกับฉัน คนที่ 1</h2>
+                <figure>
+                    <a href="portfolio.html" title="คลิกเพื่อดูผลงาน Portfolio">
+                        <img src="images/me.jpg" alt="รูปนักศึกษาคนที่ 1" width="200" height="240">
+                    </a>
+                    <figcaption>นักศึกษาคนที่ 1 (คลิกที่รูปเพื่อดู Portfolio)</figcaption>
+                </figure>
+                <p>ชื่อ: ชวนากร ไชยมี</p>
+                <p>ชื่อเล่น: พีช</p>
+                <h2>ทักษะ</h2>
+                <ul>
+                    <li>การใช้คอมพิวเตอร์</li>
+                    <li>การเล่นเกม</li>
+                    <li>การทำงานเป็นทีม</li>
+                </ul>
+                <h2>การศึกษา</h2>
+                <ol>
+                    <li>โรงเรียนเทคนิคนครสวรรค์</li>
+                    <li>ระดับปัจจุบัน ปวส.1</li>
+                </ol>
+            </section>
+
+            <section class="student">
+                <h2>เกี่ยวกับฉัน คนที่ 2</h2>
+                <figure>
+                    <a href="portfolio.html" title="คลิกเพื่อดูผลงาน Portfolio">
+                        <img src="images/project1.png" alt="รูปนักศึกษาคนที่ 2" width="200" height="240">
+                    </a>
+                    <figcaption>นักศึกษาคนที่ 2 (คลิกที่รูปเพื่อดู Portfolio)</figcaption>
+                </figure>
+                <p>ชื่อ: วุฒิพงศ์ โพธิ์เกษม</p>
+                <p>ชื่อเล่น: ฟลุ๊ค</p>
+                <h2>ทักษะ</h2>
+                <ul>
+                    <li>การเล่นกีฬา</li>
+                    <li>การออกแบบเว็บไซต์</li>
+                    <li>การแก้ปัญหาเบื้องต้น</li>
+                </ul>
+                <h2>การศึกษา</h2>
+                <ol>
+                    <li>โรงเรียนเดิม: พระบางวิทยา</li>
+                    <li>ระดับปัจจุบัน ปวส.1</li>
+                </ol>
+            </section>
+        </div>
+
+        <section id="account">
+            <h2>ระบบสมาชิก</h2>
+            <p>หากต้องการใช้งานระบบสมาชิก สามารถสมัครสมาชิกก่อน แล้วเข้าสู่ระบบได้ที่นี่</p>
+            <p><a class="back-link" href="signup.html">สมัครสมาชิก</a>
+               <a class="back-link" href="login.html">เข้าสู่ระบบ</a></p>
+        </section>
+    </main>
+
+    <footer><p>จัดทำโดยนักศึกษา 2 คน</p></footer>
+</body>
+</html>
