@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="หน้าเข้าสู่ระบบเว็บไซต์ Portfolio">
+<title>เข้าสู่ระบบ | Portfolio</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f0f4f8;color:#263238;line-height:1.7}
+header,footer{background:#1565c0;color:#fff;text-align:center;padding:18px}
+header h1{margin:0}
+nav ul{list-style:none;padding:0;margin:8px 0 0;display:flex;justify-content:center;gap:20px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none}
+main{width:min(100% - 24px,520px);margin:35px auto}
+.card{background:#fff;padding:24px;border-radius:14px;box-shadow:0 4px 14px #00000015}
+h2{color:#1565c0;margin-top:0}
+label{display:block;font-weight:bold;margin:12px 0 4px}
+input{width:100%;padding:11px;border:1px solid #b8c7d8;border-radius:7px;font:inherit}
+input:focus{outline:2px solid #90caf9;border-color:#1565c0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button,.button{border:0;border-radius:8px;padding:11px 18px;font:inherit;cursor:pointer;text-decoration:none;display:inline-block}
+.primary{background:#1565c0;color:#fff}.secondary{background:#e3eaf2;color:#263238}
+.note{background:#fff8e1;border-left:4px solid #f9a825;padding:12px;border-radius:6px;font-size:.92rem}
+.message{min-height:26px;font-weight:bold}
+a{color:#1565c0}
+@media(max-width:520px){.card{padding:17px}header h1{font-size:1.4rem}}
+</style>
+</head>
+<body>
+<header>
+<h1>เข้าสู่ระบบ</h1>
+<nav><ul>
+<li><a href="index.html">หน้าแรก</a></li>
+<li><a href="portfolio.html">Portfolio</a></li>
+<li><a href="signup.html">สมัครสมาชิก</a></li>
+</ul></nav>
+</header>
+<main>
+<section class="card">
+<h2>เข้าสู่ระบบสมาชิก</h2>
+<p class="note">ระบบสาธิต: ต้องสมัครสมาชิกจากหน้านี้ในเบราว์เซอร์เดียวกันก่อน ข้อมูลจะหายเมื่อปิด session หรือเบราว์เซอร์</p>
+<form id="loginForm">
+<label for="username">Username</label>
+<input id="username" name="username" type="text" autocomplete="username" required>
+<label for="password">Password</label>
+<input id="password" name="password" type="password" autocomplete="current-password" required>
+<div class="actions">
+<button class="primary" type="submit">เข้าสู่ระบบ</button>
+<button class="secondary" type="reset">ยกเลิก</button>
+</div>
+<p><a href="#" id="forgot">ลืมรหัสผ่าน?</a></p>
+<p class="message" id="message" aria-live="polite"></p>
+</form>
+<p>ยังไม่มีบัญชี? <a href="signup.html">สมัครสมาชิก</a></p>
+</section>
+</main>
+<footer>เว็บไซต์ Portfolio นักศึกษา</footer>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event){
+  event.preventDefault();
+  const message = document.getElementById('message');
+  let account = null;
+  try { account = JSON.parse(sessionStorage.getItem('portfolioDemoAccount') || 'null'); } catch(e) {}
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  if(account && username === account.username && password === account.password){
+    message.textContent = 'เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ ' + account.fullname;
+    message.style.color = '#2e7d32';
+  } else {
+    message.textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง กรุณาสมัครสมาชิกก่อน';
+    message.style.color = '#c62828';
+  }
+});
+document.getElementById('forgot').addEventListener('click', function(event){
+  event.preventDefault();
+  alert('ระบบลืมรหัสผ่านยังไม่เชื่อมต่ออีเมล หากต้องการใช้งานจริงต้องเพิ่มระบบยืนยันตัวตนและส่งลิงก์รีเซ็ตรหัสผ่าน');
+});
+</script>
+</body>
+</html>
